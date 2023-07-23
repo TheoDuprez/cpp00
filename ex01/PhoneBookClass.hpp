@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:11 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/18 15:16:47 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/23 21:38:09 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PhoneBookClass_HPP
 
 # include <iostream>
+# include <cstdlib>
+
 # define FIRSTNAME 1
 # define LASTNAME 2
 # define PHONENUMBER 3

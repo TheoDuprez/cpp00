@@ -6,7 +6,7 @@ CC =			g++
 
 CFLAGS =		-std=c++98 -Wall -Werror -Wextra
 
-HEADERS =		./PhoneBookClass.hpp
+HEADER =		.
 
 BLACK	= 		\033[0;30m
 RED		= 		\033[0;91m
@@ -17,8 +17,8 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./main.cpp
-				./ContactClass.cpp
+SRCS =			./main.cpp \
+				./ContactClass.cpp \
 				./PhoneBookClass.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
@@ -31,8 +31,8 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	echo "$(GREEN)Phonebook successfully compiled !$(WHITE)"
 
-./srcs/%.o: ./srcs/%.cpp $(HEADERS)
-	$(CC) $(CFLAGS) -I$(HEADERS) -c $< -o $@
+./%.o: ./%.cpp $(HEADER)/PhoneBookClass.hpp
+	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 clean:
 	echo "$(YELLOW)Deleting all files exept binaries$(WHITE)"

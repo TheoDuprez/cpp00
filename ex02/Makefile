@@ -1,10 +1,12 @@
 # VARIABLE DECLARATION ############################################################################
 
-NAME =			megaphone
+NAME =			dreamjob
 
 CC =			g++
 
 CFLAGS =		-std=c++98 -Wall -Werror -Wextra
+
+HEADER =		.
 
 BLACK	= 		\033[0;30m
 RED		= 		\033[0;91m
@@ -15,7 +17,8 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./megaphone.cpp
+SRCS =			./tests.cpp \
+				./Account.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -23,12 +26,12 @@ OBJS =			$(SRCS:.cpp=.o)
 
 all: $(NAME)
 $(NAME): $(OBJS)
-	echo "$(CYAN)Compiling megaphone :$(WHITE)"
+	echo "$(CYAN)Compiling dreamjob :$(WHITE)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	echo "$(GREEN)Megaphone successfully compiled ! $(WHITE)"
+	echo "$(GREEN)Dreamjob successfully compiled !$(WHITE)"
 
-./%.o: ./%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+./%.o: ./%.cpp $(HEADER)/Account.hpp
+	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 clean:
 	echo "$(YELLOW)Deleting all files exept binaries$(WHITE)"
@@ -42,6 +45,6 @@ re:
 	make -s fclean
 	make -s all
 
-.SILENT:
+# .SILENT:
 
 .PHONY: all clean fclean re

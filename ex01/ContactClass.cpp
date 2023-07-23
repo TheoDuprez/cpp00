@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:26 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/18 15:34:16 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/23 21:41:16 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,16 @@ void	Contact::addContact(const char *prompt, int whichData)
 	{
 		case 1:
 			this->firstName = userInput;
+			break ;
 		case 2:
 			this->lastName = userInput;
+			break ;
 		case 3:
 			this->phoneNumber = userInput;
+			break ;
 		case 4:
 			this->secret = userInput;
+			break ;
 	}
 	return ;
 }

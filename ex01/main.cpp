@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:05:32 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/18 16:05:09 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/23 21:38:50 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 		if (std::cin.eof())
 		{
 			std::cout << "Error ! An EOF was detected, please restart the program !" << std::endl;
-			std::_Exit(1);
+			std::exit(1);
 		}
 		if (userInput == "ADD")
 		{
@@ -63,12 +63,12 @@ int	main(void)
 			}
 			std::cout << "Select an index to print the data : ";
 			std::getline(std::cin, userInput);
-			if (std::stoi(userInput) < 7 && repertory.contacts[std::stoi(userInput)].getData(FIRSTNAME).empty() == false)
+			if (atoi(userInput.c_str()) < 7 && repertory.contacts[atoi(userInput.c_str())].getData(FIRSTNAME).empty() == false)
 			{
-				std::cout << "First name     : " << repertory.contacts[std::stoi(userInput)].getData(FIRSTNAME) << std::endl;
-				std::cout << "Last name      : " << repertory.contacts[std::stoi(userInput)].getData(LASTNAME) << std::endl;
-				std::cout << "Phone number   : " << repertory.contacts[std::stoi(userInput)].getData(PHONENUMBER) << std::endl;
-				std::cout << "Darkest secret : " << repertory.contacts[std::stoi(userInput)].getData(SECRET) << std::endl;
+				std::cout << "First name     : " << repertory.contacts[atoi(userInput.c_str())].getData(FIRSTNAME) << std::endl;
+				std::cout << "Last name      : " << repertory.contacts[atoi(userInput.c_str())].getData(LASTNAME) << std::endl;
+				std::cout << "Phone number   : " << repertory.contacts[atoi(userInput.c_str())].getData(PHONENUMBER) << std::endl;
+				std::cout << "Darkest secret : " << repertory.contacts[atoi(userInput.c_str())].getData(SECRET) << std::endl;
 			}
 			else
 				std::cout << "Error ! This index or this contact does not exist !" << std::endl;
@@ -84,7 +84,7 @@ bool	isAllIsspace(std::string s)
 	for (int i = 0; s[i]; i++)
 		if ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
 			count++;
-	if (count != 0 && count == s.length())
+	if (count != 0 && count == (int)s.length())
 		return (true);
 	return (false);
 }
