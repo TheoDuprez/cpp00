@@ -1,10 +1,12 @@
 # VARIABLE DECLARATION ############################################################################
 
-NAME =			megaphone
+NAME =			phonebook
 
 CC =			g++
 
 CFLAGS =		-std=c++98 -Wall -Werror -Wextra
+
+HEADERS =		./PhoneBookClass.hpp
 
 BLACK	= 		\033[0;30m
 RED		= 		\033[0;91m
@@ -15,7 +17,9 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./megaphone.cpp
+SRCS =			./main.cpp
+				./ContactClass.cpp
+				./PhoneBookClass.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -23,12 +27,12 @@ OBJS =			$(SRCS:.cpp=.o)
 
 all: $(NAME)
 $(NAME): $(OBJS)
-	echo "$(CYAN)Compiling megaphone :$(WHITE)"
+	echo "$(CYAN)Compiling phonebook :$(WHITE)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	echo "$(GREEN)Megaphone successfully compiled ! $(WHITE)"
+	echo "$(GREEN)Phonebook successfully compiled !$(WHITE)"
 
-./srcs/%.o: ./srcs/%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+./srcs/%.o: ./srcs/%.cpp $(HEADERS)
+	$(CC) $(CFLAGS) -I$(HEADERS) -c $< -o $@
 
 clean:
 	echo "$(YELLOW)Deleting all files exept binaries$(WHITE)"
