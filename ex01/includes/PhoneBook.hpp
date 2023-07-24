@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBookClass.hpp                                 :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:11 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/23 21:38:09 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/24 17:06:34 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBookClass_HPP
-# define PhoneBookClass_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <iostream>
 # include <cstdlib>
+# include "./Contact.hpp"
 
 # define FIRSTNAME 1
 # define LASTNAME 2
-# define PHONENUMBER 3
-# define SECRET 4
-
-bool	isAllIsspace(std::string s);
-
-class	Contact {
-
-	public:
-
-	Contact(void);
-	~Contact(void);
-	std::string	getData(int whichData) const;
-	void		printData(int whichData) const;
-	void		addContact(const char *prompt, int whichData);
-
-	private:
-
-	std::string	firstName;
-	std::string	lastName;
-	std::string	phoneNumber;
-	std::string	secret;
-};
+# define NICKNAME 3
+# define PHONENUMBER 4
+# define SECRET 5
 
 class	PhoneBook {
 
@@ -52,5 +34,9 @@ class	PhoneBook {
 	private:
 
 };
+
+bool	isAllIsspace(std::string s);
+void	addContact(PhoneBook& repertory, int index);
+void	searchContact(PhoneBook& repertory);
 
 #endif

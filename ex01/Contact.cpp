@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactClass.cpp                                   :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:26 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/23 21:41:16 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/24 16:58:32 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBookClass.hpp"
+#include "./includes/PhoneBook.hpp"
+
+static std::string	getUserInput(const char *prompt);
 
 Contact::Contact(void)
 {
@@ -22,28 +24,56 @@ Contact::~Contact(void)
 	return ;
 }
 
+void	Contact::addContact(const char *prompt, int whichData)
+{
+	std::string	userInput;
+
+	userInput = getUserInput(prompt);
+	switch (whichData)
+	{
+		case FIRSTNAME:
+			this->_firstName = userInput;
+			break ;
+		case LASTNAME:
+			this->_lastName = userInput;
+			break ;
+		case NICKNAME:
+			this->_nickname = userInput;
+			break ;
+		case PHONENUMBER:
+			this->_phoneNumber = userInput;
+			break ;
+		case SECRET:
+			this->_secret = userInput;
+			break ;
+	}
+	return ;
+}
+
 std::string	Contact::getData(int whichData) const
 {
 	std::string	data;
 
 	switch (whichData) {
-		case 1:
-			return (this->firstName);
-		case 2:
-			return (this->lastName);
-		case 3:
-			return (this->phoneNumber);
-		case 4:
-			return (this->secret);
+		case FIRSTNAME:
+			return (this->_firstName);
+		case LASTNAME:
+			return (this->_lastName);
+		case NICKNAME:
+			return (this->_nickname);
+		case PHONENUMBER:
+			return (this->_phoneNumber);
+		case SECRET:
+			return (this->_secret);
 	}
 	return (NULL);
 }
 
 void	Contact::printData(int whichData) const
 {
-	int		nbSpaces;
-	int		max = 10;
-	bool	needDot = false;
+	int			nbSpaces;
+	int			max = 10;
+	bool		needDot = false;
 	std::string	str = this->getData(whichData);
 
 	nbSpaces = 10 - str.length();
@@ -62,7 +92,7 @@ void	Contact::printData(int whichData) const
 		std::cout << ".";
 }
 
-void	Contact::addContact(const char *prompt, int whichData)
+static std::string	getUserInput(const char *prompt)
 {
 	std::string	userInput;
 
@@ -73,26 +103,10 @@ void	Contact::addContact(const char *prompt, int whichData)
 		if (std::cin.eof())
 		{
 			std::cout << "Error ! An EOF was detected, please restart the program !" << std::endl;
-			std::_Exit(1);
+			std::exit(1);
 		} else if (userInput.empty() || isAllIsspace(userInput))
 			continue ;
 		break ;
 	}
-	switch (whichData)
-	{
-		case 1:
-			this->firstName = userInput;
-			break ;
-		case 2:
-			this->lastName = userInput;
-			break ;
-		case 3:
-			this->phoneNumber = userInput;
-			break ;
-		case 4:
-			this->secret = userInput;
-			break ;
-	}
-	return ;
+	return (userInput);
 }
-

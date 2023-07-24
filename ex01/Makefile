@@ -6,7 +6,7 @@ CC =			g++
 
 CFLAGS =		-std=c++98 -Wall -Werror -Wextra
 
-HEADER =		.
+HEADER =		./includes
 
 BLACK	= 		\033[0;30m
 RED		= 		\033[0;91m
@@ -18,8 +18,9 @@ CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
 SRCS =			./main.cpp \
-				./ContactClass.cpp \
-				./PhoneBookClass.cpp
+				./Contact.cpp \
+				./PhoneBook.cpp \
+				./utils.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -31,7 +32,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	echo "$(GREEN)Phonebook successfully compiled !$(WHITE)"
 
-./%.o: ./%.cpp $(HEADER)/PhoneBookClass.hpp
+./%.o: ./%.cpp $(HEADER)/PhoneBook.hpp $(HEADER)/Contact.hpp
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 clean:
@@ -46,6 +47,6 @@ re:
 	make -s fclean
 	make -s all
 
-.SILENT:
+# .SILENT:
 
 .PHONY: all clean fclean re
