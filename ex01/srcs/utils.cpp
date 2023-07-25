@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:46:10 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/25 11:34:54 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 14:39:18 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	searchContact(PhoneBook& repertory)
 	}
 	std::cout << "Select an index to print the data : ";
 	std::getline(std::cin, userInput);
-	if (atoi(userInput.c_str()) < 7 && !userInput.empty() && \
-	repertory.getContacts(atoi(userInput.c_str())).getData(FIRSTNAME).empty() == false)
+	if (userInput.length() == 1 && isdigit(userInput.c_str()[0]) && (atoi(userInput.c_str()) >= 0 && atoi(userInput.c_str()) <= 7) \
+	&& repertory.getContacts(atoi(userInput.c_str())).getData(FIRSTNAME).empty() == false)
 	{
 		std::cout << "First name     : " << repertory.getContacts(atoi(userInput.c_str())).getData(FIRSTNAME) << std::endl;
 		std::cout << "Last name      : " << repertory.getContacts(atoi(userInput.c_str())).getData(LASTNAME) << std::endl;

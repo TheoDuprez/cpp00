@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 21:15:02 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/23 21:20:26 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 14:20:42 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	megaphone(char **av);
 
 int	main(int ac, char **av)
 {
-	if (ac >= 2)
+	if (ac > 1)
 		megaphone(av + 1);
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;

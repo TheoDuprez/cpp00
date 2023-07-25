@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:11 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/25 11:36:09 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 14:21:39 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 # define PHONENUMBER 4
 # define SECRET 5
 
-class	PhoneBook {
+class	PhoneBook
+{
 
 	public:
 	
