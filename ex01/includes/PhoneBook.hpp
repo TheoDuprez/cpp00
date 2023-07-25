@@ -6,7 +6,7 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:11 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/24 17:06:34 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 11:36:09 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ class	PhoneBook {
 	
 	PhoneBook(void);
 	~PhoneBook(void);
-	Contact	contacts[8];
+	Contact&	getContacts(const int index);
 
 	private:
+	Contact _contacts[8];
 
 };
 

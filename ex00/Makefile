@@ -15,7 +15,7 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./megaphone.cpp
+SRCS =			./srcs/megaphone.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -39,8 +39,8 @@ fclean: clean
 	rm -rf $(NAME)
 
 re:
-	make -s fclean
-	make -s all
+	make fclean
+	make all
 
 .SILENT:
 

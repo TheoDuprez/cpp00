@@ -17,10 +17,10 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./main.cpp \
-				./Contact.cpp \
-				./PhoneBook.cpp \
-				./utils.cpp
+SRCS =			./srcs/main.cpp \
+				./srcs/Contact.cpp \
+				./srcs/PhoneBook.cpp \
+				./srcs/utils.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -44,9 +44,9 @@ fclean: clean
 	rm -rf $(NAME)
 
 re:
-	make -s fclean
-	make -s all
+	make fclean
+	make all
 
-# .SILENT:
+.SILENT:
 
 .PHONY: all clean fclean re

@@ -6,11 +6,11 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:17 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/24 17:05:54 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 11:36:06 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -20,4 +20,9 @@ PhoneBook::PhoneBook(void)
 PhoneBook::~PhoneBook(void)
 {
 	return ;
+}
+
+Contact&	PhoneBook::getContacts(const int index)
+{
+	return (this->_contacts[index]);
 }

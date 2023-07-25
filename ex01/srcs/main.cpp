@@ -6,13 +6,11 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:05:32 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/24 17:05:47 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 11:15:59 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/PhoneBook.hpp"
-#include <string>
-#include <stdio.h>
+#include "../includes/PhoneBook.hpp"
 
 int	main(void)
 {

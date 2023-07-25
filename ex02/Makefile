@@ -6,7 +6,7 @@ CC =			g++
 
 CFLAGS =		-std=c++98 -Wall -Werror -Wextra
 
-HEADER =		.
+HEADER =		./includes
 
 BLACK	= 		\033[0;30m
 RED		= 		\033[0;91m
@@ -17,8 +17,8 @@ PURPLE	= 		\033[0;35m
 CYAN	= 		\033[0;96m
 WHITE	= 		\033[0;37m
 
-SRCS =			./tests.cpp \
-				./Account.cpp
+SRCS =			./srcs/tests.cpp \
+				./srcs/Account.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
@@ -42,9 +42,9 @@ fclean: clean
 	rm -rf $(NAME)
 
 re:
-	make -s fclean
-	make -s all
+	make fclean
+	make all
 
-# .SILENT:
+.SILENT:
 
 .PHONY: all clean fclean re

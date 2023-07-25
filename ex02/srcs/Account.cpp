@@ -6,13 +6,13 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 10:32:18 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/23 12:40:13 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 11:18:26 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <ctime>
-#include "Account.hpp"
+#include "../includes/Account.hpp"
 
 
 Account::Account(int initial_deposit): _amount(initial_deposit)

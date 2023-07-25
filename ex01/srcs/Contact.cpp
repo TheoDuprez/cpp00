@@ -6,11 +6,11 @@
 /*   By: tduprez <tduprez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 11:06:26 by tduprez           #+#    #+#             */
-/*   Updated: 2023/07/24 16:58:32 by tduprez          ###   ########lyon.fr   */
+/*   Updated: 2023/07/25 11:14:09 by tduprez          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
 
 static std::string	getUserInput(const char *prompt);
 
